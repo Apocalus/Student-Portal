@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="images/x-icon" href="images\logo.png" /> <!--Logo in title bar-->
+    <link rel = "stylesheet" href = "style-db.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+<body>
+    <div class = "header">
+    <div class = "navigation"> <!--Navigation bar-->
+        <img src="images/logo.png" class="logo">
+        <ul>
+            <li class = 'list'>
+                <a href = "index.html">
+                    <span class="icon"><ion-icon name="person-sharp"></ion-icon></span>
+                    <span class = "title">Profile</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                <a href = "course.html">
+                    <span class="icon"><ion-icon name="book-sharp"></ion-icon></span>
+                    <span class = "title">Courses</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                <a href = "attendance.html">
+                    <span class="icon"><ion-icon name="hand-left-sharp"></ion-icon></span>
+                    <span class = "title">Attendance</span>
+                </a>
+            </li>
+            <li class = 'list active'>
+                <a href = "">
+                    <span class="icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+                    <span class = "title">Results</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                    <a href = "https://ssuetstudentportal.netlify.app">
+                        <span class="icon"><ion-icon name="log-out-sharp"></ion-icon></span>
+                        <span class = "title">Log Out</span>
+                    </a>
+            </li><br><br><br><br><br>
+            <li class = 'list'>
+                    <a href = "">
+                        <span class="icon"><ion-icon name="calendar-sharp"></ion-icon></span>
+                        <span id="date" class = "title"></span>
+
+                    </a>
+            </li> 
+        </ul>
+    </div>
+    <!--THE CONTENT BOX-->
+    <div class = "content">
+        <!--To show 2nd, or 1st sem results, choose only one-->
+        <label for="session" class = "choose">Session:</label>&nbsp;&nbsp;
+        <select name="session" id="session" onclick="SelectMe()">
+          <option value="">None</option>
+          <option value="s2">Semester 2 (FALL 2022)</option>
+          <option value="s1">Semester 1 (SPRING 2022)</option>
+        </select>
+        <!--Table-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="Assessment" class = "choose">Assessment:</label>&nbsp;&nbsp;
+        <select name="Assessment" id="assessment" onclick="SelectMe()">
+          <option value="">None</option>
+          <option value="final">Final</option>
+          <option value="mids">MidTerm</option>
+          <option value="qa">QA</option>
+        </select>
+
+<!--Sem-2-->
+        <table class="content-table" id = "sem2m" style="display: none;">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--MidTerms-->
+                    <tr>
+                        <td>COMPUTING SYSTEM ORGANIZATION</td>
+                        <td>MCS112T</td>
+                        <td>Engr. Noreen Akram</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>DIFFERENTIAL EQUATIONS</td>
+                        <td>MS104</td>
+                        <td>Misbah Kanwal</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>ENGLISH</td>
+                        <td>HS102</td>
+                        <td>Ishrat Rizvi</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO GAMES MODELLING</td>
+                        <td>MCS207</td>
+                        <td>Engr. Syed Faheem Haider</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>SOFTWARE DEVELOPMENT</td>
+                        <td>MCS203T</td>
+                        <td>Engr. Umair Jilani</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>24</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+<!--Sem-2-->
+        <table class="content-table" id = "sem2f" style="display: none;">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--Finals-->
+                    <tr>
+                        <td>COMPUTING SYSTEM ORGANIZATION</td>
+                        <td>MCS112T</td>
+                        <td>Engr. Noreen Akram</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>DIFFERENTIAL EQUATIONS</td>
+                        <td>MS104</td>
+                        <td>Misbah Kanwal</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>ENGLISH</td>
+                        <td>HS102</td>
+                        <td>Ishrat Rizvi</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO GAMES MODELLING</td>
+                        <td>MCS207</td>
+                        <td>Engr. Syed Faheem Haider</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>SOFTWARE DEVELOPMENT</td>
+                        <td>MCS203T</td>
+                        <td>Engr. Umair Jilani</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>Pending</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+<!--Sem-2-->
+        <table class="content-table" id = "sem2qa" style="display: none">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--QA-->
+                    <tr>
+                        <td>COMPUTING SYSTEM ORGANIZATION</td>
+                        <td>MCS112T</td>
+                        <td>Engr. Noreen Akram</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>DIFFERENTIAL EQUATIONS</td>
+                        <td>MS104</td>
+                        <td>Misbah Kanwal</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>ENGLISH</td>
+                        <td>HS102</td>
+                        <td>Ishrat Rizvi</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO GAMES MODELLING</td>
+                        <td>MCS207</td>
+                        <td>Engr. Syed Faheem Haider</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>SOFTWARE DEVELOPMENT</td>
+                        <td>MCS203T</td>
+                        <td>Engr. Umair Jilani</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>15</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+<!--Sem-1-->
+        <table class="content-table" id = "sem1qa" style="display: none;">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--QA-->
+                    <tr>
+                        <td>CALCULUS & ANALYTICAL GEOMETRY</td>
+                        <td>MS103</td>
+                        <td>Dr. Syed Rizwan-Ul-Haq Tirmizi</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>FUNDAMENTALS OF COMPUTER ORGANIZATION</td>
+                        <td>MCS111</td>
+                        <td>Engr. Khawaja Masood Ahmed</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO PROGRAMMING</td>
+                        <td>MCS101T</td>
+                        <td>Engr. Adnan Afroz</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO MODEL DRIVEN DEVELOPMENT</td>
+                        <td>MCS102T</td>
+                        <td>Engr. Madiha Abbasi</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>PAKISTAN STUDIES AND ALIGARH MOVEMENT</td>
+                        <td>HS103</td>
+                        <td>Syeda Afshan Aziz</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>15</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+        <!--Sem-1-->
+        <table class="content-table" id = "sem1f" style="display: none;">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--Finals-->
+                    <tr>
+                        <td>CALCULUS & ANALYTICAL GEOMETRY</td>
+                        <td>MS103</td>
+                        <td>Dr. Syed Rizwan-Ul-Haq Tirmizi</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>FUNDAMENTALS OF COMPUTER ORGANIZATION</td>
+                        <td>MCS111</td>
+                        <td>Engr. Khawaja Masood Ahmed</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO PROGRAMMING</td>
+                        <td>MCS101T</td>
+                        <td>Engr. Adnan Afroz</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO MODEL DRIVEN DEVELOPMENT</td>
+                        <td>MCS102T</td>
+                        <td>Engr. Madiha Abbasi</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>PAKISTAN STUDIES AND ALIGARH MOVEMENT</td>
+                        <td>HS103</td>
+                        <td>Syeda Afshan Aziz</td>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>35</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+        <!--Sem-1-->
+        <table class="content-table" id = "sem1m" style = "display: none;">
+            <thead>
+                <tr>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>TOTAL MARKS</th>
+                    <th>PASSING MARKS</th>
+                    <th>OBTAINED MARKS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div> <!--MidTerms-->
+                    <tr>
+                        <td>CALCULUS & ANALYTICAL GEOMETRY</td>
+                        <td>MS103</td>
+                        <td>Dr. Syed Rizwan-Ul-Haq Tirmizi</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>FUNDAMENTALS OF COMPUTER ORGANIZATION</td>
+                        <td>MCS111</td>
+                        <td>Engr. Khawaja Masood Ahmed</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO PROGRAMMING</td>
+                        <td>MCS101T</td>
+                        <td>Engr. Adnan Afroz</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>INTRODUCTION TO MODEL DRIVEN DEVELOPMENT</td>
+                        <td>MCS102T</td>
+                        <td>Engr. Madiha Abbasi</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>PAKISTAN STUDIES AND ALIGARH MOVEMENT</td>
+                        <td>HS103</td>
+                        <td>Syeda Afshan Aziz</td>
+                        <td>30</td>
+                        <td>15</td>
+                        <td>20</td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+        <p>
+            <button onclick="sortTable2()" class = "fill space" style="color: white;">Display Low to High Marks</button>
+        </p>
+    </div>
+    </div>
+    <script src = "stportal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>    
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

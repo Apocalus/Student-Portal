@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="images/x-icon" href="images\logo.png" /> <!--Logo in title bar-->
+    <link rel = "stylesheet" href = "style-db.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+<body>
+    <div class = "header">
+    <div class = "navigation"> <!--Navigation bar-->
+        <img src="images/logo.png" class="logo">
+        <ul>
+            <li class = 'list'>
+                <a href = "index.html">
+                    <span class="icon"><ion-icon name="person-sharp"></ion-icon></span>
+                    <span class = "title">Profile</span>
+                </a>
+            </li>
+            <li class = 'list active'>
+                <a href = "">
+                    <span class="icon"><ion-icon name="book-sharp"></ion-icon></span>
+                    <span class = "title">Courses</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                <a href = "attendance.html">
+                    <span class="icon"><ion-icon name="hand-left-sharp"></ion-icon></span>
+                    <span class = "title">Attendance</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                <a href = "result.html">
+                    <span class="icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+                    <span class = "title">Results</span>
+                </a>
+            </li>
+            <li class = 'list'>
+                    <a href = "https://ssuetstudentportal.netlify.app">
+                        <span class="icon"><ion-icon name="log-out-sharp"></ion-icon></span>
+                        <span class = "title">Log Out</span>
+                    </a>
+            </li><br><br><br><br><br>
+            <li class = 'list'>
+                    <a href = "">
+                        <span class="icon"><ion-icon name="calendar-sharp"></ion-icon></span>
+                        <span id="date" class = "title"></span>
+
+                    </a>
+            </li> 
+        </ul>
+
+    </div>
+        <!--THE CONTENT BOX-->
+        <div class = "content">
+            <!--To show 1st sem courses, choose only one-->
+            <label for="session" class = "choose">Choose a session:</label>&nbsp;&nbsp;
+            <select name="session" id="session" onclick = "selectMe()">
+              <option value="">None</option>
+              <option value="s1">Semester 1 (FALL 2022)</option>
+            </select>
+            <!--Table-->
+
+<!--Sem-1-->
+            <table class="content-table" id = "sem1" style="display: none;">
+                <thead>
+                  <tr>
+                    <th>CRED HRS</th>
+                    <th>TYPE</th>
+                    <th>COURSE</th>
+                    <th>CODE</th>
+                    <th>FACULTY</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>Core</td>
+                        <td>CALCULUS & ANALYTICAL GEOMETRY</td>
+                        <td>MS103 - 460</td>
+                        <td>Dr. Syed Rizwan-Ul-Haq Tirmizi</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Core</td>
+                        <td>FUNDAMENTALS OF COMPUTER ORGANIZATION</td>
+                        <td>MCS111 - 1247</td>
+                        <td>Engr. Khawaja Masood Ahmed</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Core</td>
+                        <td>INTRODUCTION TO MODEL DRIVEN DEVELOPMENT</td>
+                        <td>MCS102L - 1515</td>
+                        <td>Engr. Ayesha Rafique</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Core</td>
+                        <td>INTRODUCTION TO MODEL DRIVEN DEVELOPMENT</td>
+                        <td>MCS102T - 1516</td>
+                        <td>Engr. Madiha Abbasi</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Core</td>
+                        <td>INTRODUCTION TO PROGRAMMING</td>
+                        <td>MCS101L - 1528</td>
+                        <td>Engr. Adnan Afroz</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Core</td>
+                        <td>INTRODUCTION TO PROGRAMMING</td>
+                        <td>MCS101T - 1529</td>
+                        <td>Engr. Adnan Afroz</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Core</td>
+                        <td>PAKISTAN STUDIES AND ALIGARH MOVEMENT</td>
+                        <td>HS103 - 1897</td>
+                        <td>Syeda Afshan Aziz</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td></td><td></td><td></td><td></td>
+                        <th>Total</th>
+                        <td>17 Cred Hrs</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+
+    <script src = "stportal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>    
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
